@@ -1,0 +1,65 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset ='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='description' content='')
+        meta(name='viewport' content='initial-scale=1.0, width=device-width')
+        link(href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,500,700|Ubuntu" rel="stylesheet")
+        link(rel='stylesheet' href='css/jquery.fancybox.min.css')
+        link(rel='stylesheet' href='css/styles.min.css')
+        title myMycoLab
+
+    body
+        include components/header.pug
+
+        main.main-wrap.main-wrap-padding
+            section.pay
+                .container
+                    .pay-box
+                        h2.form-ttl  Checkout order
+                        .form-sub-ttl  Fill in all the fields
+                        form.form
+                            .form-field-box
+                                input(type="text" name="nickname" placeholder="Your nickname")
+                            .form-field-box
+                                input(type="text" name="phone" placeholder="Phone")
+                            .form-field-box
+                                input(type="text" name="email" placeholder="Email")
+                            .form-field-box.form-field-box-margin-bot-none
+                                input(type="text" name="doctor" placeholder="Doctor id ( if you have it )")
+                            .form-field-box.form-field-box-code
+                                .form-field-ttl Your special order code
+                                .code-field 0000
+                                span| -
+                                .code-field 0000
+                                span| -
+                                .code-field 0000
+                                span| -
+                                .code-field 0000
+                                span| -
+                                .code-field 0000
+                            .form-field-box.form-field-box-pay
+                                .pay-form-price
+                                    span.pay-box-ttl Price: 
+                                    span.pay-box-cost $150
+                                .pay-form-payments
+                                    span.pay-form-item
+                                        input#visa(type="radio" name="pay" val="visa" checked)
+                                        label(for="visa")
+                                            .icon.icon-visa
+                                    span.pay-form-item
+                                        input#master(type="radio" name="pay" val="master-card")
+                                        label(for="master")
+                                            .icon.icon-mastercard
+                                    span.pay-form-item
+                                        input#express(type="radio" name="pay" val="american-express")
+                                        label(for="express")
+                                            .icon.icon-express
+                            button.btn.btn-send(type="submit") Pay
+
+        include components/footer.pug   
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src='js/jquery.fancybox.min.js')
+        script(src='js/scripts.min.js')

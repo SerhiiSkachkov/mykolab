@@ -1,0 +1,22 @@
+html(lang="ru")
+    head
+        meta(charset ='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='description' content='')
+        meta(name='viewport' content='initial-scale=1.0, width=device-width')
+        link(href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,400i,500,700|Ubuntu" rel="stylesheet")
+        link(rel='stylesheet' href='css/jquery.fancybox.min.css')
+        link(rel='stylesheet' href='css/styles.min.css')
+        title myMycoLab
+
+    body
+        
+        include components/header.pug
+
+        main.main-wrap.main-wrap-padding
+            include sections/testing.pug
+        include components/footer.pug
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script(src='jquery.fancybox.min.js')
+        script(src='js/scripts.min.js')

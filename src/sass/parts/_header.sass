@@ -1,0 +1,109 @@
+.header
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	background-color: $white-color
+	z-index: 9999
+
+#header.default 
+	position: fixed
+	top: 0
+	background: #fefefe
+	border-bottom: 1px solid $primary-color
+	box-shadow: 0 1px 1px $primary-color
+	.logo-img-form
+		display: none
+	.logo-img-solo
+		display: block
+	.nav-box
+		top: 66px
+
+.logo-img-solo
+	display: none
+
+.logo:hover
+	opacity: 0.8
+
+.header-box
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+
+.nav-iltem a
+	color: $text-primary-bold
+	position: relative
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		width: 0
+		border-bottom: 1px solid transparent
+		left: 50%
+		bottom: -3px
+	&:hover
+		color: $text-primary
+		&:before
+			left: 0	
+			transition: all 0.3s
+			border-bottom: 1px solid $primary-color
+			width: 100%	
+
+@media(max-width: 991px)
+	.header-box
+		align-items: center
+	.nav-box
+		display: none
+		width: 100%
+		position: absolute
+		height: 100vh
+		left: 0
+		right: 0
+		top: 90px
+		background-color: $white-color
+		border-top: 1px solid $primary-color
+		padding-top: 10px
+		box-shadow: inset 14px 34px 2px -33px $primary-color
+		overflow: scroll
+		padding-top: 30px
+		padding-bottom: 40px
+	.header-logo
+		width: 140px
+	.nav-iltem 
+		margin-bottom: 10px
+	.nav-iltem a
+		font-size: 20px
+@media(max-width: 767px)
+	#header.default
+		.nav-box
+			top: 66px
+	.nav-box
+		top: 77px
+@media(max-width: 767px)
+	.header-logo
+		width: 120px
+@media(min-width: 992px)
+	.header
+		background: transparent
+	.nav-list
+		display: flex
+	.header-logo
+		width: 200px
+	.header-box
+		align-items: center
+	.nav-iltem a
+		font-family: $primary-font-family
+		font-size: 18px
+	.nav-box
+		width: calc(100% - 250px)
+	.nav-list
+		justify-content: space-between
+@media(min-width: 1199px)
+	.header-logo
+		width: 275px
+		margin-left: 10px
+	.nav-box
+		padding-top: 15px
+		width: calc(100% - 325px)
+	.nav-iltem a
+		font-size: 21px

@@ -1,0 +1,96 @@
+.pay
+    padding: 30px 0px
+
+.pay-box
+    max-width: 450px
+    margin: 0 auto
+
+.form-field-box-pay
+    display: flex
+    justify-content: space-between
+
+.form-field-box-pay label
+    margin: 0px 5px
+    display: inline-block
+    &:focus
+        border: 1px solid red
+
+.pay-box-ttl
+    font-size: 18px
+    font-weight: bold
+
+.pay-box-cost
+    font-size: 18px
+    font-weight: bold
+
+.pay-form-box span 
+    vertical-align: top
+
+.pay-form-item
+    display: inline-block
+
+.pay-form-item label .icon
+    height: 28px
+
+@media(min-width:540px)
+    .pay-box-cost
+        font-size: 24px
+    .pay-box-ttl
+        font-size: 22px
+
+.code-field
+    background-color: #fff
+    border: 1px solid #bdbdbd
+    border-radius: 8px
+    height: 44px
+    padding: 0px 3px
+    line-height: 44px
+    width: calc(100% / 5 - 10px)
+    text-align: center
+    font-size: 16px
+
+.form-field-box-code
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-flow: wrap
+
+.form-field-ttl
+    padding: 10px 0px
+
+.pay-form-item input[type="radio"]:checked + label:before
+    opacity: 1
+    transform: translateX(-50%) translateY(-50%) scale(1)
+
+.pay-form-item input[type="radio"]:checked + label:after
+    opacity: 1
+    transform: translateX(-50%) translateY(-50%) scale(1)
+
+.pay-form-item label
+    border: 1px solid transparent
+    border-radius: 5px
+    position: relative
+    &:hover
+        cursor: pointer
+        &:before,
+        &:after
+            opacity: 1
+            transform: translateX(-50%) translateY(-50%) scale(1) 
+    &:before,
+    &:after
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 60px
+        height: 60px
+        border: 2px solid rgba(0, 142, 198, 0.4588235294117647)   
+        border-radius: 50%
+        content: ''
+        opacity: 0
+        transition: transform 0.3s, opacity 0.3s
+        transform: translateX(-50%) translateY(-50%) scale(0.2)
+    &:after
+        width: 50px
+        height: 50px
+        border-width: 6px
+        transform: translateX(-50%) translateY(-50%) scale(0.8)

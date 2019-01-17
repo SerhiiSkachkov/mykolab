@@ -1,0 +1,155 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$disc-name: 'disc'
+$disc-x: 45px
+$disc-y: 0px
+$disc-offset-x: -45px
+$disc-offset-y: 0px
+$disc-width: 44px
+$disc-height: 56px
+$disc-total-width: 133px
+$disc-total-height: 112px
+$disc-image: 'sprite.png'
+$disc: (45px, 0px, -45px, 0px, 44px, 56px, 133px, 112px, 'sprite.png', 'disc', )
+$express-name: 'express'
+$express-x: 89px
+$express-y: 0px
+$express-offset-x: -89px
+$express-offset-y: 0px
+$express-width: 44px
+$express-height: 56px
+$express-total-width: 133px
+$express-total-height: 112px
+$express-image: 'sprite.png'
+$express: (89px, 0px, -89px, 0px, 44px, 56px, 133px, 112px, 'sprite.png', 'express', )
+$inform-name: 'inform'
+$inform-x: 92px
+$inform-y: 56px
+$inform-offset-x: -92px
+$inform-offset-y: -56px
+$inform-width: 30px
+$inform-height: 30px
+$inform-total-width: 133px
+$inform-total-height: 112px
+$inform-image: 'sprite.png'
+$inform: (92px, 56px, -92px, -56px, 30px, 30px, 133px, 112px, 'sprite.png', 'inform', )
+$master-name: 'master'
+$master-x: 0px
+$master-y: 56px
+$master-offset-x: 0px
+$master-offset-y: -56px
+$master-width: 44px
+$master-height: 56px
+$master-total-width: 133px
+$master-total-height: 112px
+$master-image: 'sprite.png'
+$master: (0px, 56px, 0px, -56px, 44px, 56px, 133px, 112px, 'sprite.png', 'master', )
+$visa-name: 'visa'
+$visa-x: 0px
+$visa-y: 0px
+$visa-offset-x: 0px
+$visa-offset-y: 0px
+$visa-width: 45px
+$visa-height: 56px
+$visa-total-width: 133px
+$visa-total-height: 112px
+$visa-image: 'sprite.png'
+$visa: (0px, 0px, 0px, 0px, 45px, 56px, 133px, 112px, 'sprite.png', 'visa', )
+$youtube-name: 'youtube'
+$youtube-x: 44px
+$youtube-y: 56px
+$youtube-offset-x: -44px
+$youtube-offset-y: -56px
+$youtube-width: 48px
+$youtube-height: 36px
+$youtube-total-width: 133px
+$youtube-total-height: 112px
+$youtube-image: 'sprite.png'
+$youtube: (44px, 56px, -44px, -56px, 48px, 36px, 133px, 112px, 'sprite.png', 'youtube', )
+$spritesheet-width: 133px
+$spritesheet-height: 112px
+$spritesheet-image: 'sprite.png'
+$spritesheet-sprites: ($disc, $express, $inform, $master, $visa, $youtube, )
+$spritesheet: (133px, 112px, 'sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(../img/sprites/#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+
+
+.icon
+  display: inline-block
+  
+
+.icon-visa
+  @include sprite($visa)
+            
+.icon-mastercard
+  @include sprite($master)
+            
+.icon-express
+  @include sprite($express)
+            
+.icon-discover
+  @include sprite($disc)
+
+.icon-inform
+  @include sprite($inform)
+
+.icon-youtube
+  @include sprite($youtube)

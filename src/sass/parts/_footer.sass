@@ -1,0 +1,144 @@
+.foo
+	background: linear-gradient(to top, $primary-bold-color  , $primary-color,) 100% 0%
+
+.foo-box
+	background: url(../img/footer-img-bg.png) 77% 100% no-repeat/contain
+	padding: 27px 0px 0px
+
+.foo-logo
+	width: 200px
+	margin: 0 auto
+	display: block
+	margin-bottom: 10px
+
+.foo-logo:hover
+	opacity: 0.7
+
+.scial-ttl
+	color: rgba(255, 255, 255, 0.6)
+	margin-bottom: 10px
+	text-align: center
+
+.social
+	width: 30px
+	height: 30px
+	background-image: url(../img/social.png)
+	background-repeat: no-repeat
+
+.social-list
+	display: flex
+	width: 195px
+	margin: 0 auto
+	justify-content: space-between
+
+.social-list li > a:hover
+	opacity: 0.6
+
+.social-facebook
+	background-position: 2px 4px
+
+.social-twitter
+	background-position: -39px 4px	
+					
+.social-youtube
+	background-position: -77px 4px
+
+.social-google-plus
+	background-position: -118px 4px
+
+.social-instagram
+	background-position: -159px 4px		
+
+.foo-menu
+	padding: 30px 0px
+
+.foo-menu-list
+	text-align: center
+
+.foo-menu-list li
+	margin-bottom: 10px
+
+.foo-menu-list li a
+	color: rgba(255, 255, 255, 0.6)
+	font-weight: 500
+	border-bottom: 1px solid rgba(255, 255, 255, 0.6)
+	&:hover
+		color: $white-color
+
+.foo-contact-list
+	margin-bottom: 20px
+
+.foo-contact-list li
+	margin-bottom: 5px
+	text-align: center
+
+.foo-contact-list li > a
+	color: rgba(255, 255, 255, 0.6)
+	font-weight: 500
+	text-align: center
+	&:hover
+		color: $white-color
+
+.billing
+	display: flex
+	justify-content: space-between
+	width: 210px
+	margin: 0 auto
+
+.billing li > a:hover
+	opacity: 0.5
+
+@media(min-width: 768px)	
+	.foo-box
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	.foo-menu
+		display: flex
+		width: 100%
+		justify-content: space-between
+		order: 1
+	.foo-menu-list
+		display: flex
+		width: 49.3%
+		justify-content: space-between
+	.foo-social
+		order: 2
+	.scial-ttl
+		text-align: left
+	.foo-contact
+		order: 3
+	.foo-contact-list li 
+		text-align: right
+		margin-bottom: 10px
+	.billing
+		margin: 0px
+		margin-left: auto
+	
+@media(min-width: 992px)
+	.foo-menu-list
+		width: 47.3%
+		
+@media(min-width: 1199px)
+	.foo-social
+		order: 1
+		padding-top: 10px
+		padding-left: 13px
+	.foo-logo
+		margin-bottom: 25px
+	.foo-menu
+		padding-top: 20px
+		width: auto
+		width: 350px
+	.foo-menu-list
+		display: flex
+		width: 5%
+		flex-direction: column
+		justify-content: flex-start
+		width: auto
+	.foo-contact-list
+		margin-bottom: 33px
+	.foo-menu-list li
+		text-align: left
+	.scial-ttl
+		margin-bottom: 5px
